@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Rasindu Nawod</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+
+        .premium-blur {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .back-btn { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .back-btn:hover { transform: scale(1.08); box-shadow: 0 8px 24px rgba(99,102,241,0.25); }
+
+        /* ── Floating image ── */
+        .photo-wrap { position: relative; display: inline-block; }
+        .photo-img {
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 4px solid white;
+            box-shadow: 0 8px 32px rgba(99,102,241,0.28);
+            animation: float 3.5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%   { transform: translateY(0px); }
+            50%  { transform: translateY(-9px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Fade-in */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in    { animation: fadeInUp 0.6s ease both; }
+        .fade-in-d1 { animation: fadeInUp 0.6s 0.10s ease both; }
+        .fade-in-d2 { animation: fadeInUp 0.6s 0.20s ease both; }
+        .fade-in-d3 { animation: fadeInUp 0.6s 0.30s ease both; }
+        .fade-in-d4 { animation: fadeInUp 0.6s 0.40s ease both; }
+        .fade-in-d5 { animation: fadeInUp 0.6s 0.50s ease both; }
+
+        .info-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .info-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(0,0,0,0.07); }
+
+        .timeline-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+
+        .cv-btn {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 24px rgba(79,70,229,0.30);
+        }
+        .cv-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(79,70,229,0.45); }
+
+        .tool-badge { transition: transform 0.2s ease; }
+        .tool-badge:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- ── Floating Back Button ── -->
+    <div class="fixed bottom-6 right-6 z-[9999]">
+        <a href="index.html"
+           class="back-btn w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg
+                  flex items-center justify-center text-slate-600 hover:text-indigo-600 hover:border-indigo-300"
+           title="Back to Home">
+            <i class="fa-solid fa-arrow-left text-base"></i>
+        </a>
+    </div>
+
+    <!-- ── Navbar ── -->
+    <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-[9999] w-[90%] max-w-4xl premium-blur
+                border border-white/40 rounded-2xl shadow-sm px-6 py-4
+                flex justify-between items-center transition-all duration-300 isolate">
+        <div class="text-xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+            Lex Frost
+        </div>
+        <div class="flex items-center gap-4 sm:gap-5 relative z-[10000] pointer-events-auto">
+            <a href="https://roky2k05.github.io/Selfpolio/" target="_blank"
+               class="text-slate-500 hover:text-indigo-600 text-lg transition-colors" title="Personal Website">
+               <i class="fa-solid fa-globe"></i></a>
+            <a href="https://github.com/roky2k05" target="_blank"
+               class="text-slate-500 hover:text-indigo-600 text-lg transition-colors" title="GitHub">
+               <i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/rasindu-nawod-148901374" target="_blank"
+               class="text-slate-500 hover:text-indigo-600 text-lg transition-colors" title="LinkedIn | Graphic Design">
+               <i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/rasindu-nawod-055105448" target="_blank"
+               class="text-slate-500 hover:text-indigo-600 text-lg transition-colors" title="LinkedIn | Software Engineering">
+               <i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@user-sy4qn3kz3q" target="_blank"
+               class="text-slate-500 hover:text-rose-600 text-lg transition-colors" title="YouTube">
+               <i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════════
+         HERO — Profile Card (fixed desktop layout)
+    ══════════════════════════════════════════════════════════ -->
+    <section class="pt-36 pb-6 px-4 max-w-5xl mx-auto">
+        <div class="bg-white border border-slate-100 rounded-3xl shadow-sm overflow-visible fade-in">
+
+            <!-- ── Gradient Banner ── -->
+            <div class="relative h-44 sm:h-52 rounded-t-3xl overflow-hidden
+                        bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
+                <!-- Dot texture -->
+                <div class="absolute inset-0 opacity-20"
+                     style="background-image:
+                            radial-gradient(circle, white 1px, transparent 1px);
+                            background-size: 30px 30px;"></div>
+
+                <!-- Decorative blobs -->
+                <div class="absolute -top-10 -right-10 w-48 h-48 rounded-full bg-white/10 blur-2xl"></div>
+                <div class="absolute bottom-0 left-1/3 w-32 h-32 rounded-full bg-pink-400/20 blur-2xl"></div>
+            </div>
+
+            <!-- ── Profile Row ── -->
+            <!--
+                Strategy: The white content area has padding-top = 76px (half image height 64 + 12 gap).
+                The image is position:absolute, sitting at top:-64px of this container, flush left.
+                Name + CV start from the left but pushed right via margin-left on desktop.
+            -->
+            <div class="relative px-6 sm:px-10 pb-8 rounded-b-3xl bg-white">
+
+                <!-- Floating photo — absolute, overlaps the banner edge -->
+                <div class="absolute left-8 sm:left-10"
+                     style="top: -64px;">
+                    <div class="photo-wrap">
+                        <img src="about-profile.jpg"
+                             alt="Rasindu Nawod"
+                             class="photo-img"
+                             style="width:128px; height:128px;">
+                    </div>
+                </div>
+
+                <!-- Text content — left margin on desktop clears the image -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+                     style="padding-top: 76px; padding-left: 0;">
+
+                    <!-- On sm+ push text right of the image -->
+                    <div class="sm:pl-0 sm:ml-0">
+                        <!-- On desktop, image is 128px wide + 40px (left-10) + 16px gap = ~184px -->
+                        <!-- We use a hidden spacer on desktop to push text -->
+                        <div class="hidden sm:block" style="margin-left:148px; margin-top:-54px;">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                                    Rasindu Nawod
+                                </h1>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1
+                                             bg-indigo-50 text-indigo-600 rounded-full border border-indigo-100">
+                                    <i class="fa-solid fa-circle text-[6px] animate-pulse"></i>
+                                    Open to Opportunities
+                                </span>
+                            </div>
+                            <p class="text-slate-500 text-sm font-medium flex items-center gap-1.5 mb-0.5">
+                                <i class="fa-solid fa-location-dot text-indigo-400 text-xs"></i>
+                                Akuressa, Southern Province, Sri Lanka
+                            </p>
+                            <p class="text-slate-400 text-xs font-medium">
+                                also known as <span class="text-indigo-500 font-semibold">Lex Frost</span>
+                            </p>
+                        </div>
+                        <!-- Mobile: name shows below image (no overlap) -->
+                        <div class="sm:hidden">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">
+                                    Rasindu Nawod
+                                </h1>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1
+                                             bg-indigo-50 text-indigo-600 rounded-full border border-indigo-100">
+                                    <i class="fa-solid fa-circle text-[6px] animate-pulse"></i>
+                                    Open to Opportunities
+                                </span>
+                            </div>
+                            <p class="text-slate-500 text-sm font-medium flex items-center gap-1.5 mb-0.5">
+                                <i class="fa-solid fa-location-dot text-indigo-400 text-xs"></i>
+                                Akuressa, Southern Province, Sri Lanka
+                            </p>
+                            <p class="text-slate-400 text-xs font-medium">
+                                also known as <span class="text-indigo-500 font-semibold">Lex Frost</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- CV Button -->
+                    <a href="#cv-section"
+                       class="cv-btn self-start sm:self-center flex-shrink-0
+                              inline-flex items-center gap-2 px-5 py-3 rounded-xl text-white text-sm font-semibold whitespace-nowrap">
+                        <i class="fa-solid fa-file-arrow-down"></i>
+                        View / Download CV
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         Main Grid
+    ══════════════════════════════════════════════════════════ -->
+    <section class="py-6 px-4 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
+
+        <!-- ─── LEFT COLUMN ─────────────────────────── -->
+        <div class="lg:col-span-1 flex flex-col gap-5">
+
+            <!-- About Me -->
+            <div class="info-card fade-in-d1 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-500 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h2 class="text-sm font-bold text-slate-900 uppercase tracking-widest">About Me</h2>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    I'm a <span class="font-semibold text-slate-700">Software Engineering</span> student at ICBT Campus,
+                    passionate about building clean and efficient digital products. While I haven't entered the job
+                    market yet, I keep myself busy with real-world <span class="font-semibold text-slate-700">projects</span>
+                    that sharpen my skills every day.
+                </p>
+                <p class="text-slate-500 text-sm leading-relaxed mt-3">
+                    Beyond code, I'm a creative at heart — designing visuals with
+                    <span class="font-semibold text-slate-700">Photoshop, Illustrator &amp; InDesign</span>
+                    under the alias <span class="font-semibold text-indigo-600">Lex Frost</span>.
+                </p>
+            </div>
+
+            <!-- Location -->
+            <div class="info-card fade-in-d2 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-500 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-map-pin"></i>
+                    </div>
+                    <h2 class="text-sm font-bold text-slate-900 uppercase tracking-widest">Location</h2>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <i class="fa-solid fa-city text-slate-300 w-4 text-center"></i>
+                        Akuressa
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <i class="fa-solid fa-map text-slate-300 w-4 text-center"></i>
+                        Southern Province
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <i class="fa-solid fa-flag text-slate-300 w-4 text-center"></i>
+                        Sri Lanka &#127474;&#127472;
+                    </div>
+                </div>
+            </div>
+
+            <!-- Design Tools -->
+            <div class="info-card fade-in-d3 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-pink-50 text-pink-500 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h2 class="text-sm font-bold text-slate-900 uppercase tracking-widest">Design Tools</h2>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <div class="tool-badge flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-xs font-black">Ps</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">Photoshop</p>
+                            <p class="text-xs text-slate-400">Photo editing &amp; compositing</p>
+                        </div>
+                    </div>
+                    <div class="tool-badge flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-xs font-black">Ai</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">Illustrator</p>
+                            <p class="text-xs text-slate-400">Vector &amp; logo design</p>
+                        </div>
+                    </div>
+                    <div class="tool-badge flex items-center gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-pink-600 flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-xs font-black">Id</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">InDesign</p>
+                            <p class="text-xs text-slate-400">Layouts &amp; print media</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── RIGHT COLUMN ─────────────────────────── -->
+        <div class="lg:col-span-2 flex flex-col gap-5">
+
+            <!-- Education -->
+            <div class="info-card fade-in-d2 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-500 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="text-sm font-bold text-slate-900 uppercase tracking-widest">Education</h2>
+                </div>
+                <div class="relative">
+                    <div class="absolute left-[4px] top-2 bottom-2 w-px bg-slate-100"></div>
+                    <div class="space-y-7">
+                        <!-- ICBT -->
+                        <div class="flex gap-5">
+                            <div class="timeline-dot bg-indigo-500 mt-1.5"></div>
+                            <div class="flex-1">
+                                <div class="flex flex-wrap items-start justify-between gap-2 mb-1">
+                                    <div>
+                                        <h3 class="text-base font-bold text-slate-900">ICBT Campus</h3>
+                                        <p class="text-sm text-indigo-600 font-semibold">Computer &amp; Software Engineering</p>
+                                    </div>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-indigo-50 text-indigo-500 rounded-full flex items-center gap-1 whitespace-nowrap">
+                                        <i class="fa-solid fa-circle text-[6px] animate-pulse"></i> Currently Studying
+                                    </span>
+                                </div>
+                                <p class="text-sm text-slate-500 leading-relaxed">
+                                    Pursuing a degree in Computer and Software Engineering, focusing on software development,
+                                    data structures, algorithms, and modern development practices.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- IMS -->
+                        <div class="flex gap-5">
+                            <div class="timeline-dot bg-purple-400 mt-1.5"></div>
+                            <div class="flex-1">
+                                <h3 class="text-base font-bold text-slate-900">IMS Campus</h3>
+                                <p class="text-sm text-purple-600 font-semibold mb-1">Information Technology</p>
+                                <p class="text-sm text-slate-500 leading-relaxed">
+                                    Studied Information Technology, gaining foundational knowledge in IT systems,
+                                    networking, and digital solutions.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Rahula College -->
+                        <div class="flex gap-5">
+                            <div class="timeline-dot bg-pink-400 mt-1.5"></div>
+                            <div class="flex-1">
+                                <h3 class="text-base font-bold text-slate-900">Rahula College</h3>
+                                <p class="text-sm text-pink-600 font-semibold mb-1">Advanced Level (A/L)</p>
+                                <p class="text-sm text-slate-500 leading-relaxed">
+                                    Completed Advanced Level education, building a strong academic foundation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Status -->
+            <div class="info-card fade-in-d3 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-500 flex items-center justify-center text-sm">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h2 class="text-sm font-bold text-slate-900 uppercase tracking-widest">Current Status</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center text-sm flex-shrink-0">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-medium mb-0.5">Current Role</p>
+                            <p class="text-sm font-semibold text-slate-800">Student &amp; Developer</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Building projects actively</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm flex-shrink-0">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-medium mb-0.5">Availability</p>
+                            <p class="text-sm font-semibold text-slate-800">Open to Work</p>
+                            <p class="text-xs text-slate-500 mt-0.5">No job yet — focused on projects</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-sm flex-shrink-0">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-medium mb-0.5">Design Identity</p>
+                            <p class="text-sm font-semibold text-slate-800">Lex Frost</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Graphic Design alias</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="w-9 h-9 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center text-sm flex-shrink-0">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-medium mb-0.5">Focus Area</p>
+                            <p class="text-sm font-semibold text-slate-800">Software + Design</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Full-stack &amp; creative</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Section -->
+            <div id="cv-section" class="info-card fade-in-d4 bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 rounded-2xl p-6 shadow-lg shadow-indigo-200">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-5">
+                    <div class="text-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-file-lines text-white/70"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest text-white/70">Curriculum Vitae</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold tracking-tight mb-1">Rasindu Nawod</h3>
+                        <p class="text-white/70 text-sm">Software Engineering Student &amp; Creative Designer</p>
+                    </div>
+                    <div class="flex flex-col gap-3 w-full sm:w-auto">
+                        <a href="#"
+                           onclick="alert('CV file upload karala href eka update karanna. e.g. href=RasinduNawod_CV.pdf'); return false;"
+                           class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-indigo-700 rounded-xl text-sm font-bold shadow-lg hover:bg-indigo-50 transition-all duration-200 whitespace-nowrap">
+                            <i class="fa-solid fa-eye"></i> View CV
+                        </a>
+                        <a href="#"
+                           onclick="alert('CV file upload karala href eka update karanna. e.g. href=RasinduNawod_CV.pdf'); return false;"
+                           class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 border border-white/30 text-white rounded-xl text-sm font-semibold hover:bg-white/20 transition-all duration-200 whitespace-nowrap">
+                            <i class="fa-solid fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="mt-12 border-t border-slate-100 bg-white py-8 px-4 text-center fade-in-d5">
+        <p class="text-xs text-slate-400 font-medium">&copy; 2026 Lex Frost. Engineered with absolute precision.</p>
+    </footer>
+
+</body>
+</html>
